@@ -826,3 +826,331 @@ COMMIT;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 
+--
+-- Indexes for table `chi_tiet_don_hang`
+--
+ALTER TABLE `chi_tiet_don_hang`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `FKt57maavf6s28hxyar724mdr1b` (`don_hang_id`),
+  ADD KEY `FKac1uk7uyp826gan62mtohfd2l` (`sach_id`);
+
+--
+-- Indexes for table `chi_tiet_gio_hang`
+--
+ALTER TABLE `chi_tiet_gio_hang`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `FKsfbp0yj5l4nv2atfh77yvi7yp` (`sach_id`),
+  ADD KEY `FKp2i4brhsye436bjatiqhx758d` (`tai_khoan_id`);
+
+--
+-- Indexes for table `danhmuc`
+--
+ALTER TABLE `danhmuc`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `don_hang`
+--
+ALTER TABLE `don_hang`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `FKq3eokhf3aykw9ns4uua8rdq58` (`tai_khoan_id`);
+
+--
+-- Indexes for table `feedback`
+--
+ALTER TABLE `feedback`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `FKfj3idrswe3tei61yiyvpgg8ot` (`sach_id`),
+  ADD KEY `FKtms6pb6r6dxbp04y67x0i00x7` (`tai_khoan_id`);
+
+--
+-- Indexes for table `sach`
+--
+ALTER TABLE `sach`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `FKkko0pe28rjnckfqnblx18fnro` (`danh_muc_id`);
+
+--
+-- Indexes for table `tacgia_sach`
+--
+ALTER TABLE `tacgia_sach`
+  ADD KEY `FKddd8e8k87u6u8bg0kmngrja86` (`sach_id`),
+  ADD KEY `FKle9m691plld3ai6gn47rs4fcs` (`tacgia_id`);
+
+--
+-- Indexes for table `tac_gia`
+--
+ALTER TABLE `tac_gia`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `tai_khoan`
+--
+ALTER TABLE `tai_khoan`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- AUTO_INCREMENT for dumped tables
+--
+
+--
+-- AUTO_INCREMENT for table `chi_tiet_don_hang`
+--
+ALTER TABLE `chi_tiet_don_hang`
+  MODIFY `id` bigint NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `chi_tiet_gio_hang`
+--
+ALTER TABLE `chi_tiet_gio_hang`
+  MODIFY `id` bigint NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `danhmuc`
+--
+ALTER TABLE `danhmuc`
+  MODIFY `id` bigint NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+
+--
+-- AUTO_INCREMENT for table `don_hang`
+--
+ALTER TABLE `don_hang`
+  MODIFY `id` bigint NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `feedback`
+--
+ALTER TABLE `feedback`
+  MODIFY `id` bigint NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `sach`
+--
+ALTER TABLE `sach`
+  MODIFY `id` bigint NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=612;
+
+--
+-- AUTO_INCREMENT for table `tac_gia`
+--
+ALTER TABLE `tac_gia`
+  MODIFY `id` bigint NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=130;
+
+--
+-- AUTO_INCREMENT for table `tai_khoan`
+--
+ALTER TABLE `tai_khoan`
+  MODIFY `id` bigint NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
+-- Constraints for dumped tables
+--
+
+--
+-- Constraints for table `chi_tiet_don_hang`
+--
+ALTER TABLE `chi_tiet_don_hang`
+  ADD CONSTRAINT `FKac1uk7uyp826gan62mtohfd2l` FOREIGN KEY (`sach_id`) REFERENCES `sach` (`id`),
+  ADD CONSTRAINT `FKt57maavf6s28hxyar724mdr1b` FOREIGN KEY (`don_hang_id`) REFERENCES `don_hang` (`id`);
+
+--
+-- Constraints for table `chi_tiet_gio_hang`
+--
+ALTER TABLE `chi_tiet_gio_hang`
+  ADD CONSTRAINT `FKp2i4brhsye436bjatiqhx758d` FOREIGN KEY (`tai_khoan_id`) REFERENCES `tai_khoan` (`id`),
+  ADD CONSTRAINT `FKsfbp0yj5l4nv2atfh77yvi7yp` FOREIGN KEY (`sach_id`) REFERENCES `sach` (`id`);
+
+--
+-- Constraints for table `don_hang`
+--
+ALTER TABLE `don_hang`
+  ADD CONSTRAINT `FKq3eokhf3aykw9ns4uua8rdq58` FOREIGN KEY (`tai_khoan_id`) REFERENCES `tai_khoan` (`id`);
+
+--
+-- Constraints for table `feedback`
+--
+ALTER TABLE `feedback`
+  ADD CONSTRAINT `FKfj3idrswe3tei61yiyvpgg8ot` FOREIGN KEY (`sach_id`) REFERENCES `sach` (`id`),
+  ADD CONSTRAINT `FKtms6pb6r6dxbp04y67x0i00x7` FOREIGN KEY (`tai_khoan_id`) REFERENCES `tai_khoan` (`id`);
+
+--
+-- Constraints for table `sach`
+--
+ALTER TABLE `sach`
+  ADD CONSTRAINT `FKkko0pe28rjnckfqnblx18fnro` FOREIGN KEY (`danh_muc_id`) REFERENCES `danhmuc` (`id`);
+
+--
+-- Constraints for table `tacgia_sach`
+--
+ALTER TABLE `tacgia_sach`
+  ADD CONSTRAINT `FKddd8e8k87u6u8bg0kmngrja86` FOREIGN KEY (`sach_id`) REFERENCES `sach` (`id`),
+  ADD CONSTRAINT `FKle9m691plld3ai6gn47rs4fcs` FOREIGN KEY (`tacgia_id`) REFERENCES `tac_gia` (`id`);
+COMMIT;
+
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+
+--
+-- Indexes for table `chi_tiet_don_hang`
+--
+ALTER TABLE `chi_tiet_don_hang`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `FKt57maavf6s28hxyar724mdr1b` (`don_hang_id`),
+  ADD KEY `FKac1uk7uyp826gan62mtohfd2l` (`sach_id`);
+
+--
+-- Indexes for table `chi_tiet_gio_hang`
+--
+ALTER TABLE `chi_tiet_gio_hang`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `FKsfbp0yj5l4nv2atfh77yvi7yp` (`sach_id`),
+  ADD KEY `FKp2i4brhsye436bjatiqhx758d` (`tai_khoan_id`);
+
+--
+-- Indexes for table `danhmuc`
+--
+ALTER TABLE `danhmuc`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `don_hang`
+--
+ALTER TABLE `don_hang`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `FKq3eokhf3aykw9ns4uua8rdq58` (`tai_khoan_id`);
+
+--
+-- Indexes for table `feedback`
+--
+ALTER TABLE `feedback`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `FKfj3idrswe3tei61yiyvpgg8ot` (`sach_id`),
+  ADD KEY `FKtms6pb6r6dxbp04y67x0i00x7` (`tai_khoan_id`);
+
+--
+-- Indexes for table `sach`
+--
+ALTER TABLE `sach`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `FKkko0pe28rjnckfqnblx18fnro` (`danh_muc_id`);
+
+--
+-- Indexes for table `tacgia_sach`
+--
+ALTER TABLE `tacgia_sach`
+  ADD KEY `FKddd8e8k87u6u8bg0kmngrja86` (`sach_id`),
+  ADD KEY `FKle9m691plld3ai6gn47rs4fcs` (`tacgia_id`);
+
+--
+-- Indexes for table `tac_gia`
+--
+ALTER TABLE `tac_gia`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `tai_khoan`
+--
+ALTER TABLE `tai_khoan`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- AUTO_INCREMENT for dumped tables
+--
+
+--
+-- AUTO_INCREMENT for table `chi_tiet_don_hang`
+--
+ALTER TABLE `chi_tiet_don_hang`
+  MODIFY `id` bigint NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `chi_tiet_gio_hang`
+--
+ALTER TABLE `chi_tiet_gio_hang`
+  MODIFY `id` bigint NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `danhmuc`
+--
+ALTER TABLE `danhmuc`
+  MODIFY `id` bigint NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+
+--
+-- AUTO_INCREMENT for table `don_hang`
+--
+ALTER TABLE `don_hang`
+  MODIFY `id` bigint NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `feedback`
+--
+ALTER TABLE `feedback`
+  MODIFY `id` bigint NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `sach`
+--
+ALTER TABLE `sach`
+  MODIFY `id` bigint NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=612;
+
+--
+-- AUTO_INCREMENT for table `tac_gia`
+--
+ALTER TABLE `tac_gia`
+  MODIFY `id` bigint NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=130;
+
+--
+-- AUTO_INCREMENT for table `tai_khoan`
+--
+ALTER TABLE `tai_khoan`
+  MODIFY `id` bigint NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
+-- Constraints for dumped tables
+--
+
+--
+-- Constraints for table `chi_tiet_don_hang`
+--
+ALTER TABLE `chi_tiet_don_hang`
+  ADD CONSTRAINT `FKac1uk7uyp826gan62mtohfd2l` FOREIGN KEY (`sach_id`) REFERENCES `sach` (`id`),
+  ADD CONSTRAINT `FKt57maavf6s28hxyar724mdr1b` FOREIGN KEY (`don_hang_id`) REFERENCES `don_hang` (`id`);
+
+--
+-- Constraints for table `chi_tiet_gio_hang`
+--
+ALTER TABLE `chi_tiet_gio_hang`
+  ADD CONSTRAINT `FKp2i4brhsye436bjatiqhx758d` FOREIGN KEY (`tai_khoan_id`) REFERENCES `tai_khoan` (`id`),
+  ADD CONSTRAINT `FKsfbp0yj5l4nv2atfh77yvi7yp` FOREIGN KEY (`sach_id`) REFERENCES `sach` (`id`);
+
+--
+-- Constraints for table `don_hang`
+--
+ALTER TABLE `don_hang`
+  ADD CONSTRAINT `FKq3eokhf3aykw9ns4uua8rdq58` FOREIGN KEY (`tai_khoan_id`) REFERENCES `tai_khoan` (`id`);
+
+--
+-- Constraints for table `feedback`
+--
+ALTER TABLE `feedback`
+  ADD CONSTRAINT `FKfj3idrswe3tei61yiyvpgg8ot` FOREIGN KEY (`sach_id`) REFERENCES `sach` (`id`),
+  ADD CONSTRAINT `FKtms6pb6r6dxbp04y67x0i00x7` FOREIGN KEY (`tai_khoan_id`) REFERENCES `tai_khoan` (`id`);
+
+--
+-- Constraints for table `sach`
+--
+ALTER TABLE `sach`
+  ADD CONSTRAINT `FKkko0pe28rjnckfqnblx18fnro` FOREIGN KEY (`danh_muc_id`) REFERENCES `danhmuc` (`id`);
+
+--
+-- Constraints for table `tacgia_sach`
+--
+ALTER TABLE `tacgia_sach`
+  ADD CONSTRAINT `FKddd8e8k87u6u8bg0kmngrja86` FOREIGN KEY (`sach_id`) REFERENCES `sach` (`id`),
+  ADD CONSTRAINT `FKle9m691plld3ai6gn47rs4fcs` FOREIGN KEY (`tacgia_id`) REFERENCES `tac_gia` (`id`);
+COMMIT;
+
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+
