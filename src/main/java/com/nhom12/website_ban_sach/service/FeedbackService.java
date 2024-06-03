@@ -32,6 +32,33 @@ public class FeedbackService {
         fb.setSach(sachRepository.findById(sachId).get());
         fb.setTaiKhoan(taiKhoanRepository.findById(userId).get());
         fb.setNgayFeedback(Timestamp.valueOf(LocalDateTime.now()));
+
+        Feedback fb1 = new Feedback();
+        fb1.setNoiDung(fbDTO.getNoiDung());
+        fb1.setSoSao(fbDTO.getSoSao());
+        fb1.setSach(sachRepository.findById(sachId).get());
+        fb1.setTaiKhoan(taiKhoanRepository.findById(userId).get());
+        fb1.setNgayFeedback(Timestamp.valueOf(LocalDateTime.now()));
+        fb1.setNoiDung(fbDTO.getNoiDung());
+        fb1.setSoSao(fbDTO.getSoSao());
+        fb1.setSach(sachRepository.findById(sachId).get());
+        fb1.setTaiKhoan(taiKhoanRepository.findById(userId).get());
+        fb1.setNgayFeedback(Timestamp.valueOf(LocalDateTime.now()));
+        fb1.setNoiDung(fbDTO.getNoiDung());
+        fb1.setSoSao(fbDTO.getSoSao());
+        fb1.setSach(sachRepository.findById(sachId).get());
+        fb1.setTaiKhoan(taiKhoanRepository.findById(userId).get());
+        fb1.setNgayFeedback(Timestamp.valueOf(LocalDateTime.now()));
+        fb1.setNoiDung(fbDTO.getNoiDung());
+        fb1.setSoSao(fbDTO.getSoSao());
+        fb1.setSach(sachRepository.findById(sachId).get());
+        fb1.setTaiKhoan(taiKhoanRepository.findById(userId).get());
+        fb1.setNgayFeedback(Timestamp.valueOf(LocalDateTime.now()));
+        fb1.setNoiDung(fbDTO.getNoiDung());
+        fb1.setSoSao(fbDTO.getSoSao());
+        fb1.setSach(sachRepository.findById(sachId).get());
+        fb1.setTaiKhoan(taiKhoanRepository.findById(userId).get());
+        fb1.setNgayFeedback(Timestamp.valueOf(LocalDateTime.now()));
         return FeedbackMapper.mapToFeedbackDTO(feedbackRepository.save(fb));
     }
 
