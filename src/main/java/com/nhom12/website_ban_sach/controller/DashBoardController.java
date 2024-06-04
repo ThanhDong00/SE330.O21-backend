@@ -14,10 +14,12 @@ import java.util.List;
 @RestController
 @CrossOrigin("*")
 @RequestMapping("/api/dashboard")
+
 public class DashBoardController {
 
     @Autowired
     private DashBoardService dashBoardService;
+
     @GetMapping("/doanh_thu_theo_thang")
     public List<DoanhThuTheoThang> getDoanhThu(){
         return dashBoardService.getSoSachBanTheoDanhMuc();
