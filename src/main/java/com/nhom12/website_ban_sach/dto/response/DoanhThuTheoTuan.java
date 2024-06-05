@@ -10,7 +10,9 @@ import java.math.BigDecimal;
 @NoArgsConstructor
 public class DoanhThuTheoTuan {
     DanhMucDTO danhMuc;
+
     public BigDecimal[] doanhThu = new BigDecimal[7];
+    
     public DoanhThuTheoTuan(DanhMucDTO dm){
         danhMuc = dm;
         for(int i = 0; i < 7; i++){
