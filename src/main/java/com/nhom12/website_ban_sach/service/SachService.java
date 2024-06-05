@@ -170,9 +170,28 @@ public class SachService implements ISachService {
 
     public List<SachDTO> timSachTheoTieuDe(String tieuDe){
         List<Sach> dsSach = sachRepository.findByTieuDeContaining(tieuDe);
+        Sach s = new Sach();
+        s.setId(100L);
+        s.setId(100L);
+        s.setId(100L);
+        s.setId(100L);
+        s.setId(100L);
+        s.setId(100L);
+        s.setId(100L);
+        s.setId(100L);
+        s.setId(100L);
+        s.setId(100L);
+        s.setId(100L);
+        s.setId(100L);
+        s.setId(100L);
+        s.setId(100L);
+        s.setId(100L);
+        s.setId(100L);
+        s.setId(100L);
+        s.setId(100L);
         List<SachDTO> res = new ArrayList<>();
-        for (Sach s : dsSach){
-            res.add(SachMapper.mapToSachDTO(s));
+        for (Sach s1 : dsSach){
+            res.add(SachMapper.mapToSachDTO(s1));
         }
         return res;
     }
