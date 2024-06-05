@@ -11,10 +11,13 @@ import java.util.List;
 @RestController
 @CrossOrigin("*")
 @RequestMapping("/api/danhmuc")
+
 public class DanhMucController {
+    
     @Autowired
     private DanhMucService danhMucService;
 
+    //mapping
     @PostMapping("/createdanhmuc")
     public DanhMucDTO createDanhMuc(@RequestBody DanhMucDTO danhMucDTO){
         return danhMucService.createDanhMuc(danhMucDTO.getTenDanhMuc());
