@@ -14,10 +14,13 @@ import java.util.List;
 @RestController
 @CrossOrigin("*")
 @RequestMapping("/api/sach")
+
 public class SachController {
+
     @Autowired
     private SachService sachService;
 
+    //mapping
     @GetMapping("/getallsach")
     public ResponseEntity<List<SachDTO>> getAllSachs(){
         List<SachDTO> sachs = sachService.getAllSachs();
