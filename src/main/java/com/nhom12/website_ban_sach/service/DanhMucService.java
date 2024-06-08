@@ -24,6 +24,7 @@ public class DanhMucService implements IDanhMucService {
     public DanhMucDTO createDanhMuc(String tenDanhMuc) {
         DanhMuc danhMuc = new DanhMuc();
         danhMuc.setTenDanhMuc(tenDanhMuc);
+
         return DanhMucMapper.mapToDanhMucDTO(danhMucRepository.save(danhMuc));
     }
 
@@ -33,12 +34,14 @@ public class DanhMucService implements IDanhMucService {
         for(DanhMuc dm : danhMucList){
             danhMucDTOList.add(DanhMucMapper.mapToDanhMucDTO(dm));
         }
+
         return danhMucDTOList;
     }
 
     public DanhMucDTO updateDanhMuc(Long id, DanhMucDTO danhMucDTO) {
         DanhMuc danhMuc = danhMucRepository.findById(id).get();
         danhMuc.setTenDanhMuc(danhMucDTO.getTenDanhMuc());
+        
         return DanhMucMapper.mapToDanhMucDTO(danhMucRepository.save(danhMuc));
     }
 }

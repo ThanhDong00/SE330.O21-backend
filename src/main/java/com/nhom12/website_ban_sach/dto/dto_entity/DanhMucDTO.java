@@ -8,6 +8,8 @@ import lombok.Setter;
 @Setter
 @AllArgsConstructor
 public class DanhMucDTO {
+
     private Long id;
     private String tenDanhMuc;
+    
 }
